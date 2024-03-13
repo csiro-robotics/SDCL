@@ -44,8 +44,18 @@ If you find this code useful, please reference in our paper:
 
 SDCL is an end-to-end training strategy for continual learning model trained on a series of novel datasets. Please follow the instructions outlined below.
 
-- Use ./utils/main.py to run experiments.
-
+- Clone the code of [Dark Experience for General Continual Learning: a Strong, Simple Baseline](https://github.com/aimagelab/mammoth)
+- Go the the Mammoth code directory
+- Add the sdcl.py to the ./models/ directory
+- Use ./utils/main.py to run the experiments.
+- Reproduce the results in the paper by executing the following
+```
+python ./utils/main.py --dataset <dataset> --model <model> --buffer_size <buffer_size> --batch_size <batch_size> --minibatch_size <minibatch_size> --lr <learning_rate> --alpha <alpha> --beta <beta>
+```
+Examples [Please refer to the paper for the hyperparameters]:
+```
+python ./utils/main.py --dataset seq-cifar10 --model sdcl --buffer_size 500 --batch_size 32 --minibatch_size 32 --lr .03 --alpha 1.0 --beta 1.0
+```
 
 # Acknowledgement
 We would like to acknowledge the authors of [Dark Experience for General Continual Learning: a Strong, Simple Baseline](https://github.com/aimagelab/mammoth) for their excellent codebase which has been used as a starting point for this project.

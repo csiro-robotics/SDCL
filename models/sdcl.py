@@ -1,3 +1,4 @@
+import copy
 import torch
 from torch.nn import functional as F
 
@@ -20,7 +21,7 @@ def get_parser() -> ArgumentParser:
 
 class SDCL(ContinualModel):
     NAME = 'sdcl'
-    COMPATIBILITY = ['class-il', 'domain-il', 'task-il', 'general-continual']
+    COMPATIBILITY = ['class-il', 'domain-il', 'task-il']
 
     def __init__(self, backbone, loss, args, transform):
         super(SDCL, self).__init__(backbone, loss, args, transform)
@@ -76,6 +77,10 @@ class SDCL(ContinualModel):
     def begin_task(self, dataset):
         self.current_task += 1
 
+
+    def end_task(self, dataset):
+        self.old_net = copy.deepcopy(self.net)
+        
 
     def observe(self, inputs, labels, not_aug_inputs, use_sd=True, cwise_sd=True):
 
