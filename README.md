@@ -2,7 +2,7 @@
 
 <p align="center" style="text-align: center;">
     <img src="figures/sdcl.png"/>
-    Code for <a style='ext-align: center;' href="https://www.sciencedirect.com/science/article/pii/S0893608023004057">Subspace Distillation for Continual Learning</a>.
+    Code for Published paper at Neural Networks 2023 <a style='ext-align: center;' href="https://www.sciencedirect.com/science/article/pii/S0893608023004057">Subspace Distillation for Continual Learning</a>.
 </p>
 
 
